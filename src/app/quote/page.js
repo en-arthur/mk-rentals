@@ -14,7 +14,7 @@ export default function QuotePage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Request a Quote</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tell us about your event and we'll provide competitive pricing.
+            Tell us about your event and we&apos;ll provide competitive pricing.
           </p>
         </div>
 
