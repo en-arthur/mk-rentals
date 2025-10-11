@@ -28,7 +28,7 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium mb-6">
             <span className="text-primary">★</span>
-            <span className="ml-2">Trusted by 500+ Events in Takoradi</span>
+            <span className="ml-2">Your Trusted Event Equipment Partner</span>
           </div>
 
           {/* Main Heading */}
@@ -66,7 +66,7 @@ export default function Hero() {
             </div>
             <div className="hidden sm:block text-muted-foreground">•</div>
             <div className="text-muted-foreground">
-              📍 {SITE_CONFIG.gpsAddress}, {SITE_CONFIG.location}
+              📍 {SITE_CONFIG.location}
             </div>
           </div>
         </div>
