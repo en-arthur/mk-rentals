@@ -21,15 +21,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <Image 
-            src="/mk-r-logo.png" 
-            alt={SITE_CONFIG.name}
-            width={200}
-            height={200}
-            className="object-contain h-14 w-40"
-            priority
-          />
+        <Link href="/" className="flex items-center space-x-1">
+          <span className="text-3xl font-bold text-primary">MK</span>
+          <span className="text-3xl font-bold text-gray-700">RENTALS</span>
         </Link>
 
         {/* Desktop Navigation */}

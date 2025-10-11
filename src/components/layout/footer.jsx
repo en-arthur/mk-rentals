@@ -13,14 +13,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <div className="mb-4">
-              <Image 
-                src="/mk-r-logo.png" 
-                alt={SITE_CONFIG.name}
-                width={60}
-                height={60}
-                className="object-contain"
-              />
+            <div className="flex items-center space-x-1 mb-4">
+              <span className="text-2xl font-bold text-primary">MK</span>
+              <span className="text-2xl font-bold text-gray-700">RENTALS</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               {SITE_CONFIG.description}
