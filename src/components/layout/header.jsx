@@ -25,9 +25,9 @@ export default function Header() {
           <Image 
             src="/mk-r-logo.png" 
             alt={SITE_CONFIG.name}
-            width={120}
-            height={120}
-            className="object-contain h-14 w-auto"
+            width={200}
+            height={200}
+            className="object-contain h-14 w-40"
             priority
           />
         </Link>
