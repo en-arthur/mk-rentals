@@ -6,16 +6,7 @@ export const categories = [
     description: 'Keep your food warm and presentable with our professional chafing dishes',
     image: '/product_images/Roll-Top Chafing Dishes.jpg',
     icon: '🍲',
-    productCount: 8
-  },
-  {
-    id: 'cookware',
-    name: 'Cookware & Kitchen Equipment',
-    slug: 'cookware',
-    description: 'Professional cooking equipment for events of any size',
-    image: '/product_images/chafing dishes.jpg',
-    icon: '🍳',
-    productCount: 12
+    productCount: 3
   },
   {
     id: 'tables-chairs',
@@ -24,7 +15,7 @@ export const categories = [
     description: 'Comfortable seating solutions for all your guests',
     image: '/product_images/tables.jpg',
     icon: '🪑',
-    productCount: 15
+    productCount: 2
   },
   {
     id: 'ice-chests',
@@ -33,15 +24,6 @@ export const categories = [
     description: 'Keep beverages cold throughout your event',
     image: '/product_images/ice_chest.jpg',
     icon: '🧊',
-    productCount: 6
-  },
-  {
-    id: 'accessories',
-    name: 'Party Accessories',
-    slug: 'accessories',
-    description: 'Complete your event setup with our accessories',
-    image: '/product_images/table2.jpg',
-    icon: '🎉',
-    productCount: 20
+    productCount: 2
   }
 ];

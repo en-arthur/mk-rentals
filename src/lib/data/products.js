@@ -39,43 +39,6 @@ export const products = [
     description: 'Large folding table for bigger gatherings',
     images: ['/product_images/table3.jpg', '/product_images/table4.jpg']
   },
-  {
-    id: 'chair-001',
-    name: 'Plastic Banquet Chair',
-    category: 'tables-chairs',
-    description: 'Comfortable and durable plastic chair for any event',
-    images: ['/product_images/tables.jpg']
-  },
-  {
-    id: 'chair-002',
-    name: 'Chair Cover with Sash',
-    category: 'tables-chairs',
-    description: 'Elegant chair cover to elevate your event decor',
-    images: ['/product_images/table2.jpg']
-  },
-
-  // Cookware
-  {
-    id: 'pot-001',
-    name: 'Large Cooking Pot (50L)',
-    category: 'cookware',
-    description: 'Heavy-duty aluminum pot for cooking large quantities',
-    images: ['/product_images/chafing dishes.jpg']
-  },
-  {
-    id: 'pot-002',
-    name: 'Medium Cooking Pot (30L)',
-    category: 'cookware',
-    description: 'Versatile pot for medium-sized cooking needs',
-    images: ['/product_images/chafing_dishes-2.jpg']
-  },
-  {
-    id: 'pan-001',
-    name: 'Large Frying Pan',
-    category: 'cookware',
-    description: 'Professional-grade frying pan',
-    images: ['/product_images/chafing dishes.jpg']
-  },
 
   // Ice Chests
   {
@@ -91,29 +54,6 @@ export const products = [
     category: 'ice-chests',
     description: 'Perfect size for smaller gatherings',
     images: ['/product_images/ice-chest-2.jpg']
-  },
-
-  // Accessories
-  {
-    id: 'linen-001',
-    name: 'Table Linen (6ft)',
-    category: 'accessories',
-    description: 'Quality tablecloth to enhance your table setting',
-    images: ['/product_images/tables.jpg']
-  },
-  {
-    id: 'tray-001',
-    name: 'Serving Tray Set',
-    category: 'accessories',
-    description: 'Stainless steel serving trays in various sizes',
-    images: ['/product_images/chafing dishes.jpg']
-  },
-  {
-    id: 'napkin-001',
-    name: 'Cloth Napkins (Set of 50)',
-    category: 'accessories',
-    description: 'Premium cloth napkins for elegant dining',
-    images: ['/product_images/table2.jpg']
   }
 ];
 
