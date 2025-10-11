@@ -26,6 +26,10 @@ export const metadata = {
   title: `${SITE_CONFIG.name} - ${SITE_CONFIG.tagline}`,
   description: SITE_CONFIG.description,
   keywords: 'party rentals takoradi, catering equipment rental ghana, tables chairs rental, chafing dishes rental, event equipment takoradi',
+  icons: {
+    icon: '/mk-r-logo.png',
+    apple: '/mk-r-logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {

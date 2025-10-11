@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import { SITE_CONFIG, NAV_LINKS } from '@/lib/constants';
 import { categories } from '@/lib/data/categories';
@@ -12,7 +13,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-lg font-bold mb-4">{SITE_CONFIG.name}</h3>
+            <div className="mb-4">
+              <Image 
+                src="/mk-r-logo.png" 
+                alt={SITE_CONFIG.name}
+                width={60}
+                height={60}
+                className="object-contain"
+              />
+            </div>
             <p className="text-sm text-muted-foreground mb-4">
               {SITE_CONFIG.description}
             </p>

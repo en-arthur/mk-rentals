@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, Phone, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -20,11 +21,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold text-primary">{SITE_CONFIG.name}</span>
-            <span className="text-xs text-muted-foreground hidden sm:block">Quality Event Rentals</span>
-          </div>
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/mk-r-logo.png" 
+            alt={SITE_CONFIG.name}
+            width={60}
+            height={60}
+            className="object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
