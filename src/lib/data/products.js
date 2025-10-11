@@ -26,7 +26,7 @@ export const products = [
   // Tables & Chairs
   {
     id: 'table-001',
-    name: '6ft Folding Table',
+    name: 'Folding Table',
     category: 'tables-chairs',
     description: 'Sturdy folding table that seats 6-8 people comfortably',
     longDescription: 'Heavy-duty folding table with plastic top and steel frame. Easy to set up and transport.',
@@ -34,7 +34,7 @@ export const products = [
   },
   {
     id: 'table-002',
-    name: '8ft Folding Table',
+    name: 'Large Folding Table',
     category: 'tables-chairs',
     description: 'Large folding table for bigger gatherings',
     images: ['/product_images/table3.jpg', '/product_images/table4.jpg']

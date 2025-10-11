@@ -133,7 +133,7 @@ function VideoDialog({ video, open, onOpenChange }) {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="max-w-6xl w-full">
+      <DialogContent className="max-w-[95vw] w-full h-[95vh]">
         <DialogHeader>
           <DialogTitle>{video?.title}</DialogTitle>
         </DialogHeader>
