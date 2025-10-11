@@ -29,15 +29,8 @@ export const products = [
     name: 'Folding Table',
     category: 'tables-chairs',
     description: 'Sturdy folding table that seats 6-8 people comfortably',
-    longDescription: 'Heavy-duty folding table with plastic top and steel frame. Easy to set up and transport.',
-    images: ['/product_images/tables.jpg', '/product_images/table2.jpg']
-  },
-  {
-    id: 'table-002',
-    name: 'Large Folding Table',
-    category: 'tables-chairs',
-    description: 'Large folding table for bigger gatherings',
-    images: ['/product_images/table3.jpg', '/product_images/table4.jpg']
+    longDescription: 'Heavy-duty folding table with plastic top and steel frame. Easy to set up and transport. Perfect for events, parties, and gatherings.',
+    images: ['/product_images/tables.jpg', '/product_images/table2.jpg', '/product_images/table3.jpg', '/product_images/table4.jpg']
   },
   {
     id: 'chair-001',
