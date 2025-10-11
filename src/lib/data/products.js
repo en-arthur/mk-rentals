@@ -2,7 +2,7 @@ export const products = [
   // Chafing Dishes
   {
     id: 'chafing-001',
-    name: 'Full-Size Chafing Dish (8 qt)',
+    name: 'Full-Size Chafing Dish',
     category: 'chafing-dishes',
     description: 'Professional stainless steel chafing dish, perfect for buffet service',
     longDescription: 'High-quality stainless steel chafing dish for keeping food warm. Includes water pan, food pan, lid, and fuel holder.',
@@ -10,7 +10,7 @@ export const products = [
   },
   {
     id: 'chafing-002',
-    name: 'Half-Size Chafing Dish (4 qt)',
+    name: 'Half-Size Chafing Dish',
     category: 'chafing-dishes',
     description: 'Compact chafing dish perfect for smaller portions or side dishes',
     images: ['/product_images/chafing_dishes-2.jpg']
@@ -43,14 +43,14 @@ export const products = [
   // Ice Chests
   {
     id: 'ice-001',
-    name: 'Large Ice Chest (100L)',
+    name: 'Large Ice Chest',
     category: 'ice-chests',
     description: 'Keep drinks cold for hours with our large ice chest',
     images: ['/product_images/ice_chest.jpg']
   },
   {
     id: 'ice-002',
-    name: 'Medium Ice Chest (50L)',
+    name: 'Medium Ice Chest',
     category: 'ice-chests',
     description: 'Perfect size for smaller gatherings',
     images: ['/product_images/ice-chest-2.jpg']

@@ -2,16 +2,16 @@ export const SITE_CONFIG = {
   name: 'MK RENTALS',
   description: 'Premium Catering & Party Equipment Rentals in Takoradi',
   tagline: 'Quality Equipment for Memorable Events',
-  location: 'Pastry Close, Sawmill Down, Takoradi',
+  location: 'Sawmill Down, Takoradi',
   gpsAddress: 'GPS-WS-451-7513',
-  fullAddress: 'GPS-WS-451-7513, Pastry Close, Sawmill Down, Takoradi',
+  fullAddress: 'GPS-WS-451-7513, Sawmill Down, Takoradi',
   phones: ['0249 536993', '0542490412', '0547045969'],
   currency: 'GHS',
   currencySymbol: 'GH₵',
   hours: {
-    weekday: '8:00 AM - 6:00 PM',
-    saturday: '8:00 AM - 6:00 PM',
-    sunday: 'By Appointment'
+    weekday: '24 Hours',
+    saturday: '24 Hours',
+    sunday: '24 Hours'
   },
   coordinates: {
     lat: 4.9451,
