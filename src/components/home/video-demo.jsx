@@ -114,18 +114,26 @@ function VideoDialog({ video, open, onOpenChange }) {
     }
   };
 
-  // Reset playing state when dialog closes
+  // Reset playing state when dialog closes or opens
   const handleOpenChange = (newOpen) => {
     if (!newOpen && videoRef.current) {
       videoRef.current.pause();
       setIsPlaying(false);
     }
+    if (newOpen) {
+      // Set playing state to true when dialog opens since autoPlay is enabled
+      setIsPlaying(true);
+    }
     onOpenChange(newOpen);
   };
 
+  // Track video play/pause events
+  const handlePlay = () => setIsPlaying(true);
+  const handlePause = () => setIsPlaying(false);
+
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="max-w-4xl w-full">
+      <DialogContent className="max-w-6xl w-full">
         <DialogHeader>
           <DialogTitle>{video?.title}</DialogTitle>
         </DialogHeader>
@@ -135,6 +143,8 @@ function VideoDialog({ video, open, onOpenChange }) {
             className="w-full h-full object-cover cursor-pointer"
             onClick={togglePlay}
             onEnded={() => setIsPlaying(false)}
+            onPlay={handlePlay}
+            onPause={handlePause}
             autoPlay
           >
             <source src={video?.src} type="video/mp4" />
