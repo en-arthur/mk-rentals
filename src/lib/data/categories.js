@@ -15,7 +15,7 @@ export const categories = [
     description: 'Comfortable seating solutions for all your guests',
     image: '/product_images/tables.jpg',
     icon: '🪑',
-    productCount: 2
+    productCount: 3
   },
   {
     id: 'ice-chests',

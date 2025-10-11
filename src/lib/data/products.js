@@ -39,6 +39,14 @@ export const products = [
     description: 'Large folding table for bigger gatherings',
     images: ['/product_images/table3.jpg', '/product_images/table4.jpg']
   },
+  {
+    id: 'chair-001',
+    name: 'Folding Chair',
+    category: 'tables-chairs',
+    description: 'Comfortable folding chairs for your event guests',
+    longDescription: 'Durable and comfortable folding chairs. Perfect for weddings, parties, and corporate events. Lightweight yet sturdy construction for easy setup and transport.',
+    images: ['/product_images/chairs.jpeg']
+  },
 
   // Ice Chests
   {
