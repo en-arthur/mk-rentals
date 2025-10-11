@@ -1,0 +1,77 @@
+'use client';
+
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Phone } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/constants';
+
+export default function Hero() {
+  return (
+    <section className="relative overflow-hidden py-20 md:py-32">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/product_videos/long_video_background.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-background/70"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium mb-6">
+            <span className="text-primary">★</span>
+            <span className="ml-2">Trusted by 500+ Events in Takoradi</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+            Premium Event Equipment
+            <span className="block text-primary mt-2">For Every Occasion</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Quality catering and party equipment rentals for your events in Takoradi.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button asChild size="lg" className="text-lg">
+              <Link href="/products">
+                Browse Products
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="text-lg">
+              <Link href="/quote">Request Quote</Link>
+            </Button>
+          </div>
+
+          {/* Contact Info */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
+            <div className="flex items-center space-x-2">
+              <Phone className="h-4 w-4 text-primary" />
+              <span className="font-medium">Call us:</span>
+              <a href={`tel:${SITE_CONFIG.phones[0]}`} className="text-primary hover:underline">
+                {SITE_CONFIG.phones[0]}
+              </a>
+            </div>
+            <div className="hidden sm:block text-muted-foreground">•</div>
+            <div className="text-muted-foreground">
+              📍 {SITE_CONFIG.gpsAddress}, {SITE_CONFIG.location}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  );
+}
