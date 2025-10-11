@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, Phone, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,7 +22,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-1">
           <span className="text-3xl font-bold text-primary">MK</span>
-          <span className="text-3xl font-bold text-gray-700">RENTALS</span>
+          <span className="text-3xl font-bold text-gray-100">RENTALS</span>
         </Link>
 
         {/* Desktop Navigation */}

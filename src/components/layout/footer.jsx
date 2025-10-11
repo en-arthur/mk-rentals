@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import { SITE_CONFIG, NAV_LINKS } from '@/lib/constants';
 import { categories } from '@/lib/data/categories';
@@ -15,7 +14,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-1 mb-4">
               <span className="text-2xl font-bold text-primary">MK</span>
-              <span className="text-2xl font-bold text-gray-700">RENTALS</span>
+              <span className="text-2xl font-bold text-gray-100">RENTALS</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               {SITE_CONFIG.description}
