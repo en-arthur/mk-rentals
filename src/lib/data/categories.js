@@ -6,7 +6,7 @@ export const categories = [
     description: 'Keep your food warm and presentable with our professional chafing dishes',
     image: '/product_images/Roll-Top Chafing Dishes.jpg',
     icon: '🍲',
-    productCount: 3
+    productCount: 8
   },
   {
     id: 'tables-chairs',

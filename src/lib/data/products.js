@@ -6,21 +6,61 @@ export const products = [
     category: 'chafing-dishes',
     description: 'Professional stainless steel chafing dish, perfect for buffet service',
     longDescription: 'High-quality stainless steel chafing dish for keeping food warm. Includes water pan, food pan, lid, and fuel holder.',
-    images: ['/product_images/Roll-Top Chafing Dishes.jpg', '/product_images/chafing dishes.jpg']
+    images: ['/product_images/Roll-Top Chafing Dishes.jpg', '/product_images/chafing dishes.jpg', '/product_images/chafing_dish1.jpeg', '/product_images/chafing_dish2.jpeg', '/product_images/chafing dish+.jpeg', '/product_images/chafing-dish+2.jpeg']
   },
   {
     id: 'chafing-002',
     name: 'Half-Size Chafing Dish',
     category: 'chafing-dishes',
     description: 'Compact chafing dish perfect for smaller portions or side dishes',
-    images: ['/product_images/chafing_dishes-2.jpg']
+    images: ['/product_images/chafing_dishes-2.jpg', '/product_images/chafing_dish1.jpeg', '/product_images/chafing_dish+3.jpeg', '/product_images/chafing_dish+4.jpeg']
   },
   {
     id: 'chafing-003',
     name: 'Round Chafing Dish',
     category: 'chafing-dishes',
     description: 'Elegant round chafing dish for soups and stews',
-    images: ['/product_images/round chafing dishes.jpg']
+    images: ['/product_images/round chafing dishes.jpg', '/product_images/chafing-dish+5.jpeg', '/product_images/chafing_dish+6.jpeg']
+  },
+  {
+    id: 'chafing-004',
+    name: 'Insulated Food Container',
+    category: 'chafing-dishes',
+    description: 'Keep food hot or cold for extended periods with our insulated food containers',
+    longDescription: 'Heavy-duty insulated food containers designed to maintain food temperature for hours. Perfect for transporting and serving food at events. Durable construction with excellent insulation properties.',
+    images: ['/product_images/insulated food container+1.jpeg', '/product_images/insulated food container2.jpeg', '/product_images/insulated food container3.jpeg']
+  },
+  {
+    id: 'chafing-005',
+    name: 'Gas Stove',
+    category: 'chafing-dishes',
+    description: 'Portable gas stove for outdoor cooking and event catering',
+    longDescription: 'Professional-grade portable gas stove perfect for outdoor events, catering, and large gatherings. Reliable and efficient cooking solution.',
+    images: ['/product_images/ gas stoves+1.jpeg']
+  },
+  {
+    id: 'chafing-006',
+    name: '2-in-1 Gas Cooker',
+    category: 'chafing-dishes',
+    description: 'Versatile 2-burner gas cooker for efficient cooking',
+    longDescription: 'Dual-burner gas cooker allowing you to prepare multiple dishes simultaneously. Ideal for events requiring varied menu options.',
+    images: ['/product_images/2 in 1 gas cooker.jpeg']
+  },
+  {
+    id: 'chafing-007',
+    name: '3-in-1 Gas Cooker',
+    category: 'chafing-dishes',
+    description: 'Triple-burner gas cooker for large-scale event cooking',
+    longDescription: 'High-capacity 3-burner gas cooker designed for large events and catering operations. Cook multiple dishes at once with ease.',
+    images: ['/product_images/3 in 1 gas cooker.jpeg']
+  },
+  {
+    id: 'chafing-008',
+    name: 'Coal Pot',
+    category: 'chafing-dishes',
+    description: 'Traditional coal pot for authentic outdoor cooking',
+    longDescription: 'Traditional coal pot perfect for authentic cooking experiences. Ideal for outdoor events and traditional food preparation.',
+    images: ['/product_images/coal pots+1.jpeg', '/product_images/coal pot+2.jpeg']
   },
 
   // Tables & Chairs
@@ -47,14 +87,16 @@ export const products = [
     name: 'Large Ice Chest',
     category: 'ice-chests',
     description: 'Keep drinks cold for hours with our large ice chest',
-    images: ['/product_images/ice_chest.jpg']
+    longDescription: 'Heavy-duty ice chest with large capacity. Perfect for keeping beverages and food cold throughout your event. Durable construction with excellent insulation.',
+    images: ['/product_images/ice_chest.jpg', '/product_images/large-wheeled-cooler.jpeg', '/product_images/Igloo cooler.jpeg', '/product_images/Igloo Trailmate Journey 70-Quart Cooler +1.jpeg']
   },
   {
     id: 'ice-002',
     name: 'Medium Ice Chest',
     category: 'ice-chests',
     description: 'Perfect size for smaller gatherings',
-    images: ['/product_images/ice-chest-2.jpg']
+    longDescription: 'Compact and portable ice chest ideal for smaller events. Easy to transport while maintaining excellent cooling performance.',
+    images: ['/product_images/ice-chest-2.jpg', '/product_images/igloo cooler 2.jpeg']
   }
 ];
 
