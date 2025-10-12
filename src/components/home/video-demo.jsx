@@ -11,11 +11,11 @@ import {
 } from '@/components/ui/dialog';
 
 const videos = [
-  { id: 1, src: '/product_videos/video_demo.mp4', title: 'Equipment Showcase' },
-  { id: 2, src: '/product_videos/video+1.mp4', title: 'Event Setup' },
-  { id: 3, src: '/product_videos/video+2.mp4', title: 'Catering Equipment' },
-  { id: 4, src: '/product_videos/video+3.mp4', title: 'Party Essentials' },
-  { id: 5, src: '/product_videos/video+4.mp4', title: 'Complete Solutions' }
+  { id: 1, src: '/product_videos/video_demo.mp4', title: 'Equipment Showcase', poster: '/product_images/thumnail1.png' },
+  { id: 2, src: '/product_videos/video+1.mp4', title: 'Event Setup', poster: '/product_images/thumbnail2.png' },
+  { id: 3, src: '/product_videos/video+2.mp4', title: 'Catering Equipment', poster: '/product_images/thumnail1.png' },
+  { id: 4, src: '/product_videos/video+3.mp4', title: 'Party Essentials', poster: '/product_images/thumbnail2.png' },
+  { id: 5, src: '/product_videos/video+4.mp4', title: 'Complete Solutions', poster: '/product_images/thumnail1.png' }
 ];
 
 function VideoPlayer({ video, isSmall, onExpand }) {
@@ -62,6 +62,10 @@ function VideoPlayer({ video, isSmall, onExpand }) {
         className="w-full h-full object-cover cursor-pointer"
         onClick={handleVideoClick}
         onEnded={() => setIsPlaying(false)}
+        poster={video.poster}
+        preload="metadata"
+        playsInline
+        muted
       >
         <source src={video.src} type="video/mp4" />
         Your browser does not support the video tag.
@@ -159,6 +163,10 @@ function VideoDialog({ video, open, onOpenChange }) {
             onEnded={() => setIsPlaying(false)}
             onPlay={handlePlay}
             onPause={handlePause}
+            poster={video?.poster}
+            preload="metadata"
+            playsInline
+            muted
             autoPlay
           >
             <source src={video?.src} type="video/mp4" />
