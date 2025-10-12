@@ -14,7 +14,7 @@ export const products = [
     category: 'chafing-dishes',
     description: 'Classic stainless steel chafing dish for buffet service',
     longDescription: 'Professional stainless steel chafing dish perfect for buffet service. Includes water pan, food pan, lid, and fuel holder. Reliable and durable construction.',
-    images: ['/product_images/chafing dishes.jpg']
+    images: ['/product_images/chafing dishes.jpg', '/product_images/chafing_dishes-2.jpg', '/product_images/chafing_dish+3.jpeg', '/product_images/chafing_dish+4.jpeg', '/product_images/round chafing dishes.jpg']
   },
   {
     id: 'chafing-003',
@@ -22,7 +22,7 @@ export const products = [
     category: 'chafing-dishes',
     description: 'Large capacity chafing dish for main courses',
     longDescription: 'Full-size stainless steel chafing dish ideal for serving main courses at events. Includes water pan, food pan, lid, and fuel holder.',
-    images: ['/product_images/chafing dish+.jpeg', '/product_images/chafing-dish+5.jpeg', '/product_images/chafing_dish+6.jpeg']
+    images: ['/product_images/chafing dish+.jpeg']
   },
   {
     id: 'chafing-004',
@@ -34,21 +34,6 @@ export const products = [
   },
   {
     id: 'chafing-005',
-    name: 'Half-Size Chafing Dish',
-    category: 'chafing-dishes',
-    description: 'Compact chafing dish perfect for smaller portions or side dishes',
-    images: ['/product_images/chafing_dishes-2.jpg', '/product_images/chafing_dish+3.jpeg', '/product_images/chafing_dish+4.jpeg']
-  },
-  {
-    id: 'chafing-006',
-    name: 'Round Chafing Dish',
-    category: 'chafing-dishes',
-    description: 'Elegant round chafing dish for soups and stews',
-    longDescription: 'Elegant round chafing dish specifically designed for serving soups, stews, and liquid dishes. Durable stainless steel construction.',
-    images: ['/product_images/round chafing dishes.jpg']
-  },
-  {
-    id: 'chafing-007',
     name: 'Rectangular Chafing Dish',
     category: 'chafing-dishes',
     description: 'Classic rectangular chafing dish for versatile food service',
@@ -56,7 +41,7 @@ export const products = [
     images: ['/product_images/chafing_dish1.jpeg', '/product_images/chafing_dish2.jpeg']
   },
   {
-    id: 'chafing-008',
+    id: 'chafing-006',
     name: 'Insulated Food Container',
     category: 'chafing-dishes',
     description: 'Keep food hot or cold for extended periods with our insulated food containers',
@@ -64,7 +49,7 @@ export const products = [
     images: ['/product_images/insulated food container+1.jpeg', '/product_images/insulated food container2.jpeg', '/product_images/insulated food container3.jpeg']
   },
   {
-    id: 'chafing-009',
+    id: 'chafing-007',
     name: 'Gas Stove',
     category: 'chafing-dishes',
     description: 'Portable gas stove for outdoor cooking and event catering',
@@ -72,7 +57,7 @@ export const products = [
     images: ['/product_images/ gas stoves+1.jpeg']
   },
   {
-    id: 'chafing-010',
+    id: 'chafing-008',
     name: '2-in-1 Gas Cooker',
     category: 'chafing-dishes',
     description: 'Versatile 2-burner gas cooker for efficient cooking',
@@ -80,7 +65,7 @@ export const products = [
     images: ['/product_images/2 in 1 gas cooker.jpeg']
   },
   {
-    id: 'chafing-011',
+    id: 'chafing-009',
     name: '3-in-1 Gas Cooker',
     category: 'chafing-dishes',
     description: 'Triple-burner gas cooker for large-scale event cooking',
@@ -88,7 +73,7 @@ export const products = [
     images: ['/product_images/3 in 1 gas cooker.jpeg']
   },
   {
-    id: 'chafing-012',
+    id: 'chafing-010',
     name: 'Coal Pot',
     category: 'chafing-dishes',
     description: 'Traditional coal pot for authentic outdoor cooking',
@@ -96,7 +81,7 @@ export const products = [
     images: ['/product_images/coal pots+1.jpeg']
   },
   {
-    id: 'chafing-013',
+    id: 'chafing-011',
     name: 'Coal Pot 2',
     category: 'chafing-dishes',
     description: 'Traditional coal pot for outdoor event cooking',
