@@ -65,7 +65,6 @@ function VideoPlayer({ video, isSmall, onExpand }) {
         poster={video.poster}
         preload="metadata"
         playsInline
-        muted
       >
         <source src={video.src} type="video/mp4" />
         Your browser does not support the video tag.
@@ -166,7 +165,6 @@ function VideoDialog({ video, open, onOpenChange }) {
             poster={video?.poster}
             preload="metadata"
             playsInline
-            muted
             autoPlay
           >
             <source src={video?.src} type="video/mp4" />
