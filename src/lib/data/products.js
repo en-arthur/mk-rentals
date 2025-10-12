@@ -54,7 +54,7 @@ export const products = [
     category: 'chafing-dishes',
     description: 'Portable gas stove for outdoor cooking and event catering',
     longDescription: 'Professional-grade portable gas stove perfect for outdoor events, catering, and large gatherings. Reliable and efficient cooking solution.',
-    images: ['/product_images/ gas stoves+1.jpeg']
+    images: ['/product_images/ gas stoves+1.jpeg', '/product_videos/single gas cooker.mp4']
   },
   {
     id: 'chafing-008',
@@ -70,7 +70,7 @@ export const products = [
     category: 'chafing-dishes',
     description: 'Triple-burner gas cooker for large-scale event cooking',
     longDescription: 'High-capacity 3-burner gas cooker designed for large events and catering operations. Cook multiple dishes at once with ease.',
-    images: ['/product_images/3 in 1 gas cooker.jpeg']
+    images: ['/product_images/3 in 1 gas cooker.jpeg', '/product_videos/3 in 1 gas cooker.mp4']
   },
   {
     id: 'chafing-010',
