@@ -140,7 +140,7 @@ Reply to this email to respond directly to the customer.
 
       <div class="footer">
         <p><strong>💡 Tip:</strong> Reply to this email to respond directly to the customer.</p>
-        <p style="margin-top: 10px;">MK RENTALS | GPS-WS-451-7513, Pastry Close, Sawmill Down, Takoradi | 0249 536993</p>
+        <p style="margin-top: 10px;">MK RENTALS | Sawmill Down, Takoradi | 0249 536993</p>
       </div>
     </div>
   </div>
