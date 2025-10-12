@@ -3,12 +3,13 @@
 import { useCart } from '@/contexts/cart-context';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ShoppingCart, X, Plus, Minus, Trash2 } from 'lucide-react';
+import { ShoppingCart, X, Plus, Minus, Trash2, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import InlineLoader from '@/components/loading/inline-loader';
 
 export default function CartDrawer({ isOpen, onClose }) {
-  const { cart, removeFromCart, updateQuantity, getCartCount } = useCart();
+  const { cart, removeFromCart, updateQuantity, getCartCount, isUpdating } = useCart();
 
   // Prevent body scroll when drawer is open
   useEffect(() => {
@@ -50,6 +51,13 @@ export default function CartDrawer({ isOpen, onClose }) {
 
         {/* Cart Items */}
         <div className="flex-1 overflow-y-auto p-6">
+          {isUpdating && (
+            <div className="absolute top-20 left-0 right-0 flex justify-center z-10">
+              <div className="bg-card shadow-lg rounded-lg px-4 py-2">
+                <InlineLoader message="Updating cart..." size="sm" />
+              </div>
+            </div>
+          )}
           {cart.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingCart className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
@@ -104,6 +112,8 @@ export default function CartDrawer({ isOpen, onClose }) {
 }
 
 function CartItem({ item, onUpdateQuantity, onRemove }) {
+  const { isUpdating } = useCart();
+  
   const handleIncrement = () => {
     onUpdateQuantity(item.id, item.quantity + 1);
   };
@@ -129,8 +139,13 @@ function CartItem({ item, onUpdateQuantity, onRemove }) {
             size="icon"
             className="h-8 w-8 text-muted-foreground hover:text-destructive"
             onClick={() => onRemove(item.id)}
+            disabled={isUpdating}
           >
-            <Trash2 className="h-4 w-4" />
+            {isUpdating ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Trash2 className="h-4 w-4" />
+            )}
           </Button>
         </div>
 
@@ -141,7 +156,7 @@ function CartItem({ item, onUpdateQuantity, onRemove }) {
               size="icon"
               className="h-8 w-8"
               onClick={handleDecrement}
-              disabled={item.quantity <= 1}
+              disabled={item.quantity <= 1 || isUpdating}
             >
               <Minus className="h-3 w-3" />
             </Button>
@@ -153,6 +168,7 @@ function CartItem({ item, onUpdateQuantity, onRemove }) {
               size="icon"
               className="h-8 w-8"
               onClick={handleIncrement}
+              disabled={isUpdating}
             >
               <Plus className="h-3 w-3" />
             </Button>

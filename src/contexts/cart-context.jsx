@@ -7,6 +7,7 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -29,40 +30,51 @@ export function CartProvider({ children }) {
   }, [cart, isLoaded]);
 
   const addToCart = (product, quantity = 1, rentalPeriod = null) => {
-    setCart((prevCart) => {
-      const existingItemIndex = prevCart.findIndex(
-        (item) => item.id === product.id
-      );
+    setIsUpdating(true);
+    try {
+      setCart((prevCart) => {
+        const existingItemIndex = prevCart.findIndex(
+          (item) => item.id === product.id
+        );
 
-      if (existingItemIndex > -1) {
-        // Update existing item
-        const updatedCart = [...prevCart];
-        updatedCart[existingItemIndex] = {
-          ...updatedCart[existingItemIndex],
-          quantity: updatedCart[existingItemIndex].quantity + quantity,
-          rentalPeriod: rentalPeriod || updatedCart[existingItemIndex].rentalPeriod,
-        };
-        return updatedCart;
-      } else {
-        // Add new item
-        return [
-          ...prevCart,
-          {
-            id: product.id,
-            name: product.name,
-            category: product.category,
-            description: product.description,
-            quantity,
-            rentalPeriod,
-            addedAt: new Date().toISOString(),
-          },
-        ];
-      }
-    });
+        if (existingItemIndex > -1) {
+          // Update existing item
+          const updatedCart = [...prevCart];
+          updatedCart[existingItemIndex] = {
+            ...updatedCart[existingItemIndex],
+            quantity: updatedCart[existingItemIndex].quantity + quantity,
+            rentalPeriod: rentalPeriod || updatedCart[existingItemIndex].rentalPeriod,
+          };
+          return updatedCart;
+        } else {
+          // Add new item
+          return [
+            ...prevCart,
+            {
+              id: product.id,
+              name: product.name,
+              category: product.category,
+              description: product.description,
+              quantity,
+              rentalPeriod,
+              addedAt: new Date().toISOString(),
+            },
+          ];
+        }
+      });
+    } finally {
+      // Small delay to show loading state
+      setTimeout(() => setIsUpdating(false), 300);
+    }
   };
 
   const removeFromCart = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    setIsUpdating(true);
+    try {
+      setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    } finally {
+      setTimeout(() => setIsUpdating(false), 300);
+    }
   };
 
   const updateQuantity = (productId, quantity) => {
@@ -71,23 +83,38 @@ export function CartProvider({ children }) {
       return;
     }
 
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === productId ? { ...item, quantity } : item
-      )
-    );
+    setIsUpdating(true);
+    try {
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.id === productId ? { ...item, quantity } : item
+        )
+      );
+    } finally {
+      setTimeout(() => setIsUpdating(false), 300);
+    }
   };
 
   const updateRentalPeriod = (productId, rentalPeriod) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === productId ? { ...item, rentalPeriod } : item
-      )
-    );
+    setIsUpdating(true);
+    try {
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.id === productId ? { ...item, rentalPeriod } : item
+        )
+      );
+    } finally {
+      setTimeout(() => setIsUpdating(false), 300);
+    }
   };
 
   const clearCart = () => {
-    setCart([]);
+    setIsUpdating(true);
+    try {
+      setCart([]);
+    } finally {
+      setTimeout(() => setIsUpdating(false), 300);
+    }
   };
 
 
@@ -103,6 +130,7 @@ export function CartProvider({ children }) {
     updateRentalPeriod,
     clearCart,
     getCartCount,
+    isUpdating,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

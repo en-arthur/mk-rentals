@@ -7,14 +7,15 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { ShoppingCart, Plus, Minus, Package } from 'lucide-react';
+import { ShoppingCart, Plus, Minus, Package, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ProductActions({ product }) {
   const [quantity, setQuantity] = useState(1);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const { addToCart } = useCart();
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const { addToCart, isUpdating } = useCart();
   const { showToast } = useToast();
 
   const handleIncrement = () => setQuantity((prev) => prev + 1);
@@ -35,10 +36,16 @@ export default function ProductActions({ product }) {
     };
   };
 
-  const handleAddToCart = () => {
-    const rentalPeriod = calculateRentalPeriod();
-    addToCart(product, quantity, rentalPeriod);
-    showToast(`${product.name} (×${quantity}) added to cart`, 'success');
+  const handleAddToCart = async () => {
+    setIsAddingToCart(true);
+    try {
+      const rentalPeriod = calculateRentalPeriod();
+      addToCart(product, quantity, rentalPeriod);
+      showToast(`${product.name} (×${quantity}) added to cart`, 'success');
+    } finally {
+      // Wait for cart update to complete
+      setTimeout(() => setIsAddingToCart(false), 400);
+    }
   };
 
   return (
@@ -120,9 +127,23 @@ export default function ProductActions({ product }) {
 
       {/* Action Buttons */}
       <div className="space-y-3">
-        <Button size="lg" className="w-full" onClick={handleAddToCart}>
-          <ShoppingCart className="mr-2 h-5 w-5" />
-          Add to Quote Cart
+        <Button 
+          size="lg" 
+          className="w-full" 
+          onClick={handleAddToCart}
+          disabled={isAddingToCart || isUpdating}
+        >
+          {isAddingToCart || isUpdating ? (
+            <>
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+              Adding to Cart...
+            </>
+          ) : (
+            <>
+              <ShoppingCart className="mr-2 h-5 w-5" />
+              Add to Quote Cart
+            </>
+          )}
         </Button>
         <Button asChild variant="outline" size="lg" className="w-full">
           <Link href={`/quote?productId=${product.id}`}>

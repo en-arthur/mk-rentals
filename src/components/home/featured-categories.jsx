@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { categories } from '@/lib/data/categories';
+import { cn } from '@/lib/utils';
 
 export default function FeaturedCategories() {
   return (
@@ -21,18 +25,37 @@ export default function FeaturedCategories() {
         {/* Categories Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category) => (
-            <Link key={category.id} href={`/products/${category.slug}`}>
-              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full overflow-hidden">
-                {/* Category Image */}
-                <div className="relative h-48 w-full bg-gradient-to-br from-primary/10 to-secondary/10 overflow-hidden">
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
+            <CategoryCard key={category.id} category={category} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CategoryCard({ category }) {
+  const [imageLoading, setImageLoading] = useState(true);
+
+  return (
+    <Link href={`/products/${category.slug}`}>
+      <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full overflow-hidden">
+        {/* Category Image */}
+        <div className="relative h-48 w-full bg-gradient-to-br from-primary/10 to-secondary/10 overflow-hidden">
+          {imageLoading && (
+            <div className="absolute inset-0 bg-muted animate-pulse" />
+          )}
+          <Image
+            src={category.image}
+            alt={category.name}
+            fill
+            className={cn(
+              "object-cover group-hover:scale-105 transition-transform duration-300",
+              imageLoading ? "opacity-0" : "opacity-100"
+            )}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            onLoad={() => setImageLoading(false)}
+          />
+        </div>
                 
                 <CardContent className="p-6">
                   {/* Title */}
@@ -52,12 +75,8 @@ export default function FeaturedCategories() {
                     </span>
                     <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
                   </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
