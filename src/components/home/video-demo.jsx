@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -20,7 +20,20 @@ const videos = [
 
 function VideoPlayer({ video, isSmall, onExpand }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef(null);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -34,7 +47,8 @@ function VideoPlayer({ video, isSmall, onExpand }) {
   };
 
   const handleVideoClick = () => {
-    if (isSmall && onExpand) {
+    // On mobile, always play directly. On desktop, expand small videos
+    if (isSmall && onExpand && !isMobile) {
       onExpand();
     } else {
       togglePlay();
@@ -65,13 +79,13 @@ function VideoPlayer({ video, isSmall, onExpand }) {
               className={isSmall ? "h-12 w-12 rounded-full" : "h-16 w-16 rounded-full"}
               variant="default"
             >
-              {isSmall ? (
+              {isSmall && !isMobile ? (
                 <Maximize2 className="h-6 w-6" />
               ) : (
                 <Play className="h-8 w-8 ml-1" />
               )}
             </Button>
-            {isSmall && (
+            {isSmall && !isMobile && (
               <span className="text-white text-xs font-medium bg-black/60 px-2 py-1 rounded">
                 Click to expand
               </span>
@@ -80,8 +94,8 @@ function VideoPlayer({ video, isSmall, onExpand }) {
         </div>
       )}
 
-      {/* Pause Button (shows when playing) - only for large video */}
-      {isPlaying && !isSmall && (
+      {/* Pause Button (shows when playing) */}
+      {isPlaying && (
         <div 
           className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
           onClick={togglePlay}
