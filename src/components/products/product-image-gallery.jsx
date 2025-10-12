@@ -53,6 +53,7 @@ export default function ProductImageGallery({ images, productName }) {
             <video
               src={currentMedia}
               controls
+              muted
               className="w-full h-full object-cover"
               onLoadedData={() => setImageLoading(false)}
             >
