@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock, Facebook } from 'lucide-react';
 import { SITE_CONFIG, NAV_LINKS } from '@/lib/constants';
 import { categories } from '@/lib/data/categories';
 
@@ -19,6 +19,20 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground mb-4">
               {SITE_CONFIG.description}
             </p>
+            {/* Social Media Links */}
+            {SITE_CONFIG.social.facebook && (
+              <div className="flex items-center space-x-3">
+                <a
+                  href={SITE_CONFIG.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+                  aria-label="Visit our Facebook page"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Quick Links */}

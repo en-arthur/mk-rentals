@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
     lng: -1.7513
   },
   social: {
-    facebook: '',
+    facebook: 'https://web.facebook.com/profile.php?id=61582098965517',
     instagram: '',
     twitter: ''
   }
