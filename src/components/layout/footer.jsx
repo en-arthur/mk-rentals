@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-1 mb-4">
               <span className="text-2xl font-bold text-primary">MK</span>
-              <span className="text-2xl font-bold text-gray-200">RENTALS</span>
+              <span className="text-2xl font-bold text-foreground">RENTALS</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               {SITE_CONFIG.description}
