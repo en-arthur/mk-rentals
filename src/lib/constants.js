@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   description: 'Premium Catering & Party Equipment Rentals in Takoradi',
   tagline: 'Quality Equipment for Memorable Events',
   location: 'Sawmill Down, Takoradi',
-  gpsAddress: '',
+  gpsAddress: 'GPS-WS-451-7513',
   fullAddress: 'Sawmill Down, Takoradi',
   phones: ['0249 536993', '0542490412', '0547045969'],
   currency: 'GHS',
