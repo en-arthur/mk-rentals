@@ -17,9 +17,12 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster="/product_images/thumnail1.png"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-none"
+          className="w-full h-full"
           style={{
-            objectFit: 'cover'
+            objectFit: 'cover',
+            objectPosition: 'center center',
+            width: '100%',
+            height: '100%'
           }}
         >
           <source src="/product_videos/long_video_background.mp4" type="video/mp4" />
