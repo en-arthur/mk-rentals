@@ -7,9 +7,9 @@ import { SITE_CONFIG } from '@/lib/constants';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-32">
+    <section className="relative overflow-hidden py-20 md:py-32 min-h-[600px] md:min-h-[700px]">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 w-full h-full">
         <video
           autoPlay
           loop
@@ -17,7 +17,10 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster="/product_images/thumnail1.png"
-          className="w-full h-full object-cover"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-none"
+          style={{
+            objectFit: 'cover'
+          }}
         >
           <source src="/product_videos/long_video_background.mp4" type="video/mp4" />
         </video>
