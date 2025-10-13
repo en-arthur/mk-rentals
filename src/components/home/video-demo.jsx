@@ -18,7 +18,7 @@ const videos = [
   { id: 5, src: '/product_videos/video+4.mp4', title: 'Complete Solutions', poster: '/product_images/thumnail1.png' }
 ];
 
-function VideoPlayer({ video, isSmall, onExpand }) {
+function VideoPlayer({ video, isSmall, onExpand, autoPlayOnHover = false }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef(null);
@@ -55,8 +55,27 @@ function VideoPlayer({ video, isSmall, onExpand }) {
     }
   };
 
+  const handleMouseEnter = () => {
+    if (autoPlayOnHover && videoRef.current && !isPlaying) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (autoPlayOnHover && videoRef.current && isPlaying) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0; // Reset to beginning
+      setIsPlaying(false);
+    }
+  };
+
   return (
-    <div className="relative aspect-video rounded-lg overflow-hidden bg-black shadow-lg group">
+    <div 
+      className="relative aspect-video rounded-lg overflow-hidden bg-black shadow-lg group"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <video
         ref={videoRef}
         className="w-full h-full object-cover cursor-pointer"
@@ -65,6 +84,7 @@ function VideoPlayer({ video, isSmall, onExpand }) {
         poster={video.poster}
         preload="metadata"
         playsInline
+        muted={autoPlayOnHover} // Mute when autoplay on hover is enabled
       >
         <source src={video.src} type="video/mp4" />
         Your browser does not support the video tag.
@@ -234,7 +254,7 @@ export default function VideoDemo() {
         <div className="max-w-6xl mx-auto">
           {/* Main Featured Video */}
           <div className="mb-8">
-            <VideoPlayer video={videos[0]} isSmall={false} />
+            <VideoPlayer video={videos[0]} isSmall={false} autoPlayOnHover={true} />
           </div>
 
           {/* Additional Videos Grid */}
