@@ -5,7 +5,7 @@ export const products = [
     name: 'Chafing Dish',
     category: 'chafing-dishes',
     description: 'Keep food warm at your event',
-    longDescription: 'Stainless steel chafing dish with roll-top lid.',
+    longDescription: 'Stainless steel chafing dish.',
     images: ['/product_images/Roll-Top Chafing Dishes.jpg', '/product_images/chafing-dish+5.jpeg', '/product_images/chafing_dish+6.jpeg']
   },
   {
