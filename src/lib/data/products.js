@@ -34,10 +34,10 @@ export const products = [
   },
   {
     id: 'chafing-005',
-    name: 'Rectangular Chafing Dish',
+    name: 'Soup Chafer',
     category: 'chafing-dishes',
-    description: 'Rectangular chafing dish',
-    longDescription: 'Rectangular design for versatile food service. Durable stainless steel construction.',
+    description: 'Soup chafer for serving soups and stews',
+    longDescription: 'Specialized soup chafer designed for serving hot soups and stews. Durable stainless steel construction.',
     images: ['/product_images/chafing_dish1.jpeg', '/product_images/chafing_dish2.jpeg']
   },
   {
@@ -45,7 +45,6 @@ export const products = [
     name: 'Insulated Food Container',
     category: 'chafing-dishes',
     description: 'Keep food hot or cold for hours',
-    longDescription: 'Insulated container that maintains food temperature.',
     images: ['/product_images/insulated food container+1.jpeg', '/product_images/insulated food container2.jpeg', '/product_images/insulated food container3.jpeg']
   },
   {
