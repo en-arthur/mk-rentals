@@ -5,7 +5,7 @@ export const products = [
     name: 'Chafing Dish',
     category: 'chafing-dishes',
     description: 'Keep food warm at your event',
-    longDescription: 'Stainless steel chafing dish with roll-top lid. Includes water pan, food pan, and fuel holder.',
+    longDescription: 'Stainless steel chafing dish with roll-top lid.',
     images: ['/product_images/Roll-Top Chafing Dishes.jpg', '/product_images/chafing-dish+5.jpeg', '/product_images/chafing_dish+6.jpeg']
   },
   {
@@ -13,7 +13,7 @@ export const products = [
     name: 'Standard Chafing Dish',
     category: 'chafing-dishes',
     description: 'Classic chafing dish for buffet service',
-    longDescription: 'Stainless steel chafing dish for buffets. Includes water pan, food pan, lid, and fuel holder.',
+    longDescription: 'Stainless steel chafing dish for buffets.',
     images: ['/product_images/chafing dishes.jpg', '/product_images/chafing_dishes-2.jpg', '/product_images/chafing_dish+3.jpeg', '/product_images/chafing_dish+4.jpeg', '/product_images/round chafing dishes.jpg']
   },
   {
@@ -21,7 +21,7 @@ export const products = [
     name: 'Chafing Dish',
     category: 'chafing-dishes',
     description: 'Large capacity for main courses',
-    longDescription: 'Full-size chafing dish for serving main courses. Includes water pan, food pan, lid, and fuel holder.',
+    longDescription: 'Full-size chafing dish for serving main courses.',
     images: ['/product_images/chafing dish+.jpeg']
   },
   {
@@ -29,7 +29,7 @@ export const products = [
     name: 'Professional Chafing Dish',
     category: 'chafing-dishes',
     description: 'Professional chafing dish for catering',
-    longDescription: 'Professional chafing dish for large events. Includes water pan, food pan, lid, and fuel holder.',
+    longDescription: 'Professional chafing dish for large events.',
     images: ['/product_images/chafing-dish+2.jpeg']
   },
   {
@@ -45,7 +45,7 @@ export const products = [
     name: 'Insulated Food Container',
     category: 'chafing-dishes',
     description: 'Keep food hot or cold for hours',
-    longDescription: 'Insulated container that maintains food temperature. Perfect for transporting and serving food.',
+    longDescription: 'Insulated container that maintains food temperature.',
     images: ['/product_images/insulated food container+1.jpeg', '/product_images/insulated food container2.jpeg', '/product_images/insulated food container3.jpeg']
   },
   {
@@ -112,13 +112,13 @@ export const products = [
     id: 'ice-001',
     name: 'Ice Chest',
     category: 'ice-chests',
-    description: 'Keep drinks cold for hours',
+    description: 'Perfect for both small and large gatherings',
     longDescription: 'Perfect size for smaller gatherings.',
     images: ['/product_images/ice_chest.jpg']
   },
   {
     id: 'ice-002',
-    name: 'Medium Ice Chest',
+    name: 'Ice Chest',
     category: 'ice-chests',
     description: 'Perfect for smaller gatherings',
     longDescription: 'Compact ice chest for smaller events. Easy to transport.',
