@@ -2,6 +2,7 @@ export const SITE_CONFIG = {
   name: 'MK RENTALS',
   description: 'Premium Catering & Party Equipment Rentals in Takoradi',
   tagline: 'Quality Equipment for Memorable Events',
+  url: 'https://www.mkrentalservices.com',
   location: 'Sawmill Down, Takoradi',
   gpsAddress: 'GPS-WS-451-7513',
   fullAddress: 'Sawmill Down, Takoradi',
@@ -19,7 +20,8 @@ export const SITE_CONFIG = {
   },
   social: {
     facebook: 'https://web.facebook.com/profile.php?id=61582098965517',
-    instagram: '',
+    instagram: 'https://www.instagram.com/mk_rentals_gh/',
+    tiktok: 'https://www.tiktok.com/@mkrentals_gh',
     twitter: ''
   }
 };
