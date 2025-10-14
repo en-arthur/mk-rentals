@@ -1,4 +1,4 @@
-import { PRODUCTS } from '@/lib/products';
+import { products } from '@/lib/data/products';
 
 export default function sitemap() {
   const baseUrl = 'https://www.mkrentalservices.com';
@@ -32,7 +32,7 @@ export default function sitemap() {
   ];
 
   // Dynamic product pages
-  const productPages = PRODUCTS.map((product) => ({
+  const productPages = products.map((product) => ({
     url: `${baseUrl}/products/item/${product.id}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
