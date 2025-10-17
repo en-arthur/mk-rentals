@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Play, Pause, Maximize2 } from 'lucide-react';
+import { Play, Pause, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -231,10 +231,25 @@ function VideoDialog({ video, open, onOpenChange }) {
 export default function VideoDemo() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const scrollContainerRef = useRef(null);
 
   const handleVideoExpand = (video) => {
     setSelectedVideo(video);
     setIsDialogOpen(true);
+  };
+
+  const scrollToNext = () => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = scrollContainerRef.current.offsetWidth;
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const scrollToPrev = () => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = scrollContainerRef.current.offsetWidth;
+      scrollContainerRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -253,15 +268,33 @@ export default function VideoDemo() {
         {/* Video Scroll View */}
         <div className="max-w-7xl mx-auto">
           {/* Horizontal Scrollable Container */}
-          <div className="relative">
-            <div className="overflow-x-auto scrollbar-hide pb-4">
+          <div className="relative group">
+            {/* Previous Button */}
+            <Button
+              onClick={scrollToPrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-black/60 hover:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity"
+              variant="secondary"
+            >
+              <ChevronLeft className="h-6 w-6 text-white" />
+            </Button>
+
+            {/* Next Button */}
+            <Button
+              onClick={scrollToNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-black/60 hover:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity"
+              variant="secondary"
+            >
+              <ChevronRight className="h-6 w-6 text-white" />
+            </Button>
+
+            <div ref={scrollContainerRef} className="overflow-x-auto scrollbar-hide pb-4 scroll-smooth">
               <div className="flex gap-6 min-w-max px-2">
                 {videos.map((video) => (
                   <div key={video.id} className="w-[90vw] md:w-[700px] lg:w-[900px] flex-shrink-0">
                     <VideoPlayer 
                       video={video} 
                       isSmall={false}
-                      autoPlayOnHover={true}
+                      autoPlayOnHover={false}
                     />
                   </div>
                 ))}
@@ -269,7 +302,7 @@ export default function VideoDemo() {
             </div>
             {/* Scroll Indicator */}
             <div className="text-center mt-4 text-sm text-muted-foreground">
-              <span className="hidden md:inline">← Scroll to see more videos →</span>
+              <span className="hidden md:inline">← Use arrows or scroll to see more videos →</span>
               <span className="md:hidden">← Swipe to see more →</span>
             </div>
           </div>
