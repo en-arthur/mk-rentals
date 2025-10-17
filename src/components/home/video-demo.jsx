@@ -250,23 +250,28 @@ export default function VideoDemo() {
           </p>
         </div>
 
-        {/* Video Grid */}
-        <div className="max-w-6xl mx-auto">
-          {/* Main Featured Video */}
-          <div className="mb-8">
-            <VideoPlayer video={videos[0]} isSmall={false} autoPlayOnHover={true} />
-          </div>
-
-          {/* Additional Videos Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {videos.slice(1).map((video) => (
-              <VideoPlayer 
-                key={video.id} 
-                video={video} 
-                isSmall={true}
-                onExpand={() => handleVideoExpand(video)}
-              />
-            ))}
+        {/* Video Scroll View */}
+        <div className="max-w-7xl mx-auto">
+          {/* Horizontal Scrollable Container */}
+          <div className="relative">
+            <div className="overflow-x-auto scrollbar-hide pb-4">
+              <div className="flex gap-6 min-w-max px-2">
+                {videos.map((video) => (
+                  <div key={video.id} className="w-[90vw] md:w-[700px] lg:w-[900px] flex-shrink-0">
+                    <VideoPlayer 
+                      video={video} 
+                      isSmall={false}
+                      autoPlayOnHover={true}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Scroll Indicator */}
+            <div className="text-center mt-4 text-sm text-muted-foreground">
+              <span className="hidden md:inline">← Scroll to see more videos →</span>
+              <span className="md:hidden">← Swipe to see more →</span>
+            </div>
           </div>
         </div>
       </div>
